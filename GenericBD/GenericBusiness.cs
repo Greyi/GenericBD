@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Configuration;
@@ -22,13 +22,13 @@ namespace GenericBD
         public GenericBusiness()
         {
             Error = new Error();
-            Connection = ConfigurationManager.ConnectionStrings["local"].ConnectionString;
+            Connection = ConfigurationManager.ConnectionStrings["GenericBD"].ConnectionString;
         }
 
-        public GenericBusiness(string conecction)
+        public GenericBusiness(string connection)
         {
             Error = new Error();
-            Connection = conecction;
+            Connection = connection;
         }
 
         public void Dispose() { EndTransaction(false); }
