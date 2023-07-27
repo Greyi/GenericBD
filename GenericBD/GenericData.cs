@@ -336,7 +336,7 @@ namespace GenericBD
             foreach (string column in columns)
             {
                 var prop = res.GetType().GetProperty(column);
-                if (prop == null) break;
+                if (prop == null) continue;
                 if (!Equals(dr[column], DBNull.Value) && prop.CanWrite)
                     prop.SetValue(res, dr[prop.Name], null);
             }
