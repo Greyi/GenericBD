@@ -300,7 +300,7 @@ namespace GenericBD
                     param.Value = prop.GetValue(parameters);
                     if (setNames)
                         param.ParameterName = $"@{prop.Name}";
-                    if (prop.PropertyType == typeof(DateTime))
+                    if (param.Value is DateTime)
                         param.OleDbType = OleDbType.Date;
                     command.Parameters.Add(param);
                 }
